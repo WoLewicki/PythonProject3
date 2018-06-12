@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div align="center">
+                                 <a href= {% url "register" %} class="active" style="float: right" id="login-form-link">Register</a>
+							    </div>
+						    </div>
+                        </div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+                                <h2>Login</h2>
+                                  <form method="post">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                      <div class="form-group">
+                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                      </div>
+                                  </form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
