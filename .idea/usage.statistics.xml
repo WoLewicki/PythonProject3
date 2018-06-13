@@ -7,7 +7,7 @@
           <entry key="css" value="2" />
           <entry key="html" value="7" />
           <entry key="png" value="1" />
-          <entry key="py" value="15" />
+          <entry key="py" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -15,20 +15,22 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="7" />
           <entry key="Image" value="1" />
-          <entry key="Python" value="15" />
+          <entry key="Python" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="152" />
-          <entry key="html" value="1468" />
+          <entry key="css" value="157" />
+          <entry key="html" value="1547" />
           <entry key="py" value="2881" />
+          <entry key="txt" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="152" />
-          <entry key="HTML" value="1468" />
+          <entry key="CSS" value="157" />
+          <entry key="HTML" value="1547" />
+          <entry key="PLAIN_TEXT" value="23" />
           <entry key="Python" value="2881" />
         </counts>
       </usages-collector>
