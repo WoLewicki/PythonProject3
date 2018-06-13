@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if questions_list %}
+ <ul>
+ {% for question in questions_list %}
+ <li><a href="/home/{{ question.id}}/"> {{ question.topic}}</a></li>
+ {% endfor %}
+ </ul>
+    {% else %}
+    <p>No questions available yet.</p>
+    {% endif %}
+{% endblock %}

@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-
-
+    {% if categories_list %}
+ <ul>
+     <div class="category" style="font-family:Courier">Categories: </div>
+ {% for category in categories_list %}
+     <li><a href="{% url 'category' category.name %}"> <div class="choose" style="font-family: Verdana">{{ category.name }}</div></a></li>
+ {% endfor %}
+ </ul>
+    {% else %}
+    <p>No categories available yet.</p>
+    {% endif %}
 {% endblock %}
