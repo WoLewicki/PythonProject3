@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+    <form action="{% url 'add_question' %}" method="post">
+{% csrf_token %}
+        <div class="form-group">
+            <label for="comment">Topic:</label>
+            <input type="text" style="width: 100%" id="topic" placeholder="Topic" name="topic"/>
+        </div>
+            <div class="form-group">
+                <label for="comment">Text:</label>
+                <textarea class="form-control" rows="3" id="text" title="text" name="text"></textarea>
+            </div>
+                <div class="form-group">
+                    <label for="sel1">Select category:</label>
+                    <select class="form-control" id="category" title="category" name="category">
+                        {% for category in categories_list  %}
+                            <option value="{{ category.id }}">{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+         <input type="submit" value="Add" class="btn btn-primary"/>
+        </form>
+    </div>
+{% endblock %}
