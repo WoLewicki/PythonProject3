@@ -3,8 +3,8 @@
 {% block content %}
     <div class="w3-container w3-light-grey">
     <h2 style="text-shadow:1px 1px 0 #444" align="center">{{ question_topic }}</h2>
-        <h2 style="text-shadow:1px 1px 0 #444" align="center">{{ question_text }}</h2>
-    <h4 style="text-shadow:1px 1px 0 #444" align="center">Asked by {{ request.user }} on {{ pub_date }}</h4>
+        <h4 style="text-shadow:1px 1px 0 #444" align="center">{{ question_text }}</h4>
+    <h6 style="text-shadow:1px 1px 0 #444" align="center">Asked by {{ request.user }} on {{ pub_date }}</h6>
     </div>
     {% if responses_list %}
  <ul>
