@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from StackLike import views
 from django.contrib.auth import views as auth_views
 
@@ -22,7 +22,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', auth_views.login, {'template_name': 'login/login.html'}, name='login'),
     path('register/', views.register, name='register'),
-    path('logout/', auth_views.logout, {'next_page': '/'}, name='logout'),
+    path('logout/', auth_views.logout, name='logout'),
     path('home/', views.home, name='home'),
-    path('home/<name>/', views.category_page, name='category'),
+    path('home/new_question/', views.new_question, name='new_question'),
+    path('home/add_question/', views.add_question, name='add_question'),
+    re_path('home/new_response/(\\d+)/?$', views.new_response, name='new_response'),
+    re_path('home/add_response/(\\d+)/?$', views.add_response, name='add_response'),
+    re_path('home/([^/]+)/?$', views.category_page, name='category'),
+    re_path('home/([^/]+)/(\\d+)/?$', views.show_question, name='show_question'),
+    re_path('home/([^/]+)/(\\d+)/(\\d+)/([+-])$', views.vote, name='vote'),
 ]
+

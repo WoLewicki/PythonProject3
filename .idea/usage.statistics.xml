@@ -4,34 +4,35 @@
     <session id="-997961270">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="2" />
-          <entry key="html" value="7" />
+          <entry key="css" value="4" />
+          <entry key="html" value="32" />
           <entry key="png" value="1" />
-          <entry key="py" value="16" />
+          <entry key="py" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="2" />
-          <entry key="HTML" value="7" />
+          <entry key="CSS" value="4" />
+          <entry key="HTML" value="32" />
           <entry key="Image" value="1" />
-          <entry key="Python" value="16" />
+          <entry key="Python" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="157" />
-          <entry key="html" value="1547" />
-          <entry key="py" value="2881" />
+          <entry key="Django Console" value="352" />
+          <entry key="css" value="193" />
+          <entry key="html" value="4688" />
+          <entry key="py" value="7041" />
           <entry key="txt" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="157" />
-          <entry key="HTML" value="1547" />
+          <entry key="CSS" value="193" />
+          <entry key="HTML" value="4688" />
           <entry key="PLAIN_TEXT" value="23" />
-          <entry key="Python" value="2881" />
+          <entry key="Python" value="7393" />
         </counts>
       </usages-collector>
     </session>

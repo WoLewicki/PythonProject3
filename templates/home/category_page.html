@@ -1,10 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
+
     {% if questions_list %}
  <ul>
+      <div class="category" style="font-family:Courier"> Questions asked: </div>
  {% for question in questions_list %}
- <li><a href="/home/{{ question.id}}/"> {{ question.topic}}</a></li>
+     <div class="col-sm-4">
+      <div class="well well-sm" >
+      <blockquote>
+     <p><a href="{%  url 'show_question' question.category question.id %}">{{ question.topic }}</a></p>
+         <footer> asked by: {{ question.user }}</footer>
+                    </blockquote>
+      </div>
+     </div>
  {% endfor %}
  </ul>
     {% else %}

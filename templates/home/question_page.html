@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>{{ question_topic }}</p>
+    <p>{{ question_text }}</p>
+    <p>Asked by {{ request.user }} on {{ pub_date }}</p>
+    {% if responses_list %}
+ <ul>
+      <div class="category" style="font-family:Courier"> Responses: </div>
+ {% for response in  responses_list %}
+      <blockquote>
+        <p>{{ response.message_text }}</p>
+          <footer> Likes: {{ response.like_counter }}</footer>
+          <footer>Added by {{ response.user }}, {{ response.pub_date }}</footer>
+          <div class="submit" ><a href="{% url 'vote' category_name question_id response.id '+' %}"> Vote up</a></div>
+          <div class="submit" ><a href="{% url 'vote' category_name question_id response.id '-' %}">Vote down</a></div>
+      </blockquote>
+ {% endfor %}
+ </ul>
+    {% else %}
+    <p>No responses.</p>
+    {% endif %}
+    <div class="col-sm-2"><div class="btn-login" style=" border-top-left-radius: 10px; border-top-right-radius: 10px;
+     border-bottom-left-radius: 10px; border-bottom-right-radius: 10px"> <a href="{% url 'new_response' question_id %}">Add Response</a></div></div>
+ {% endblock %}

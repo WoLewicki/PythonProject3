@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
+       <br><div class="col-sm-2" style="text-align: right"> <a id="question" class="btn-login" style=" margin-right: 5px;
+     border-bottom-left-radius: 10px; border-bottom-right-radius: 10px" href="{% url 'new_question' %}">Add Question</a></div></br>
     {% if categories_list %}
  <ul>
+     <br></br>
      <div class="category" style="font-family:Courier">Categories: </div>
  {% for category in categories_list %}
-     <li><a href="{% url 'category' category.name %}"> <div class="choose" style="font-family: Verdana">{{ category.name }}</div></a></li>
+     <a href="{% url 'category' category.name %}"> <div class="choose" style="font-family: Verdana">{{ category.name }}</div></a>
  {% endfor %}
  </ul>
     {% else %}
-    <p>No categories available yet.</p>
     {% endif %}
 {% endblock %}

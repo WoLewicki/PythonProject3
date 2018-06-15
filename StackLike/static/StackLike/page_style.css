@@ -57,11 +57,10 @@ body {
 	background-color: #59B2E0;
 	outline: none;
 	color: #fff;
-	font-size: 14px;
+	font-size: 35px;
 	height: auto;
 	font-weight: normal;
-	padding: 14px 0;
-	text-transform: uppercase;
+	padding: 15px;
 	border-color: #59B2E6;
 }
 .btn-login:hover,
@@ -112,4 +111,8 @@ body {
 	font-size: 30px;
 	color: black;
 	text-decoration: none;
+}
+
+.background {
+	background-color: #59B2E0;
 }

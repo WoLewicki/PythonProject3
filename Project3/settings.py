@@ -71,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Project3.wsgi.application'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/home'
 
 
 # Database
@@ -106,6 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
+
+
+LOGIN_URL = '/'
 
 LANGUAGE_CODE = 'en-us'
 
