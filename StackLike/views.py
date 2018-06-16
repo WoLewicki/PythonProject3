@@ -1,11 +1,11 @@
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
-from .models import Question, Response, Category, User
+from .models import Question, Response, Category, Voting, User
 
 
 def register(request):
@@ -76,16 +76,24 @@ def add_response(request, question_id):
     category_name = category_name.name
     response = Response(user=request.user, question=question, message_text=text, like_counter=0, pub_date=timezone.now())
     response.save()
+    who_voted = Voting(response_id=response)
+    who_voted.save()
+    who_voted.voters.add(User.objects.get(id=request.user.id))
+    who_voted.save()
     return redirect('/home/'+category_name+'/'+question_id+'/')
 
 
 @login_required
 def vote(request, category_name, question_id, response_id, plus_or_minus):
     response = Response.objects.get(id=response_id)
-    if plus_or_minus == '+':
-        response.like_counter += 1
-    elif plus_or_minus == '-':
-        response.like_counter -= 1
-    response.save()
+    who_voted = Voting.objects.get(response_id=response)
+    if not who_voted.voters.filter(username=request.user.username).exists():
+        if plus_or_minus == '+':
+            response.like_counter += 1
+        elif plus_or_minus == '-':
+            response.like_counter -= 1
+        who_voted.voters.add(User.objects.get(id=request.user.id))
+        who_voted.save()
+        response.save()
     return redirect('/home/' + category_name + '/' + question_id + '/')
 

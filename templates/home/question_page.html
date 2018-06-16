@@ -16,6 +16,7 @@
           <footer>Added by {{ response.user }}, {{ response.pub_date }}</footer>
           <div class="submit" ><a href="{% url 'vote' category_name question_id response.id '+' %}"> Vote up</a></div>
           <div class="submit" ><a href="{% url 'vote' category_name question_id response.id '-' %}">Vote down</a></div>
+          <footer> Remember, you can vote only once and the decision is made forever. Just like in life. And of course if you added that response, you cannot like/dislike it.</footer>
       </blockquote>
  {% endfor %}
  </ul>

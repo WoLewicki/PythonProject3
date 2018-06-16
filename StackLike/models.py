@@ -29,3 +29,8 @@ class Response(models.Model):
     message_text = models.CharField(max_length=2000)
     like_counter = models.IntegerField(default=0)
     pub_date = models.DateTimeField('date published',)
+
+
+class Voting(models.Model):
+    response_id = models.ForeignKey(Response, on_delete=models.CASCADE)
+    voters = models.ManyToManyField(User)
